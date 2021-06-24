@@ -1,4 +1,5 @@
 # lodash-practice
+Simple terminal app that uses at least 5 lodash methods
 
 - Use fake data or APIs you have worked with in previous projects or google fake data you can use. - - [ ] Either make a fetch or save it in a few variables.
 - Console.log the output of each lodash method called on the fake data.
