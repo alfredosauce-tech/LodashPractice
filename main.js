@@ -1,4 +1,5 @@
-import _ from 'lodash'
+// import _ from 'lodash'
+const _ = require('lodash');
 
 // array of numbers for reference
 let arrOfNums = [1, 2, 3, 4, 5, 6]
@@ -125,3 +126,45 @@ console.log('Zipped Users:', _.zip(arrOfUsers, usersToZip))
 
 // _.reverse()
 console.log('Reversed Users:', _.reverse(arrOfUsers))
+
+
+// unit tests /////////////////////////
+const assert = require('assert');
+
+if (typeof describe === 'function') {
+
+  describe('#_.chunk()', () => {
+    it('should create an array of elements split into groups the length of size', () => {
+      assert.deepEqual(_.chunk([1, 2, 3, 4, 5, 6], 2),
+      [ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ] ]);
+    });
+  });
+
+  describe('#_.without()', () => {
+    it('should create an array excluding all given values', () => {
+      assert.deepEqual(_.without([1, 2, 3, 4, 5, 6], 4, 6),
+      [ 1, 2, 3, 5 ]);
+    });
+  });
+
+  describe('#_.shuffle()', () => {
+    it('should create an array of shuffled values', () => {
+      assert.notEqual(_.shuffle([1, 2, 3, 4, 5, 6]),
+      [1, 2, 3, 4, 5, 6]);
+    });
+  });
+
+  describe('#_.zip()', () => {
+    it('should create an array of grouped elements of corresponding elements of each array', () => {
+      assert.deepEqual(_.zip([1, 2, 3, 4, 5, 6], ['a', 'b', 'c', 'd', 'e', 'f']),
+      [[ 1, 'a' ], [ 2, 'b' ], [ 3, 'c' ], [ 4, 'd' ], [ 5, 'e' ], [ 6, 'f' ]]);
+    });
+  });
+
+  describe('#_.reverse()', () => {
+    it('should reverse an array of elements', () => {
+      assert.deepEqual(_.reverse([1, 2, 3, 4, 5, 6]),
+      [ 6, 5, 4, 3, 2, 1 ]);
+    });
+  });
+}

@@ -2,9 +2,9 @@
   "name": "lodash-practice",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/MayraNT/lodash-practice#readme",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.1"
   }
 }
